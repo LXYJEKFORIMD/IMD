@@ -1,11 +1,12 @@
-#Flutter
+# Flutter
 
-###Flutter是什么?
+### Flutter是什么?
 
 Flutter是一款移动应用程序SDK，一份代码可以同时生成iOS和Android两个高性能、高保真的应用程序。
 
 Flutter目标是使开发人员能够交付在不同平台上都感觉自然流畅的高性能应用程序。我们兼容滚动行为、排版、图标等方面的差异。
 
+<img>
 <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 800 640">
   <defs>
     <style>
@@ -33,6 +34,7 @@ Flutter目标是使开发人员能够交付在不同平台上都感觉自然流�
   <image xmlns:xlink="http://www.w3.org/1999/xlink" x="485" y="127" width="242" height="430" xlink:href="https://flutterchina.club/images/whatisflutter/hero-shrine-ios.jpg"/>
   <image xmlns:xlink="http://www.w3.org/1999/xlink" x="76" y="137" width="232" height="417" xlink:href="https://flutterchina.club/images/whatisflutter/hero-shrine-ios.jpg"/>
 </svg>
+<img>
 
 这是一个来自[Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo)的演示应用程序， 您可以在安装Flutter并设置好环境后运行Flutter示例应用程序。“Shrine”示例拥有高质量的滚动图片、互动卡片、按钮、下拉列表和购物车页面。 要查看这个和更多示例的代码，请访问[GitHub](https://github.com/flutter/flutter/tree/master/examples)。
 
@@ -40,7 +42,7 @@ Flutter目标是使开发人员能够交付在不同平台上都感觉自然流�
 
 ***
 
-###为什么要使用Flutter?
+### 为什么要使用Flutter?
 
 Flutter有什么优势？它可以帮助你：
 
@@ -56,11 +58,11 @@ Flutter有什么优势？它可以帮助你：
 
 ***
 
-###核心原则
+### 核心原则
 
 Flutter包括一个现代的响应式框架、一个2D渲染引擎、现成的widget和开发工具。这些组件可以帮助您快速地设计、构建、测试和调试应用程序。
 
-#####一切皆为widget
+##### 一切皆为widget
 
 Widget是Flutter应用程序用户界面的基本构建块。每个Widget都是用户界面一部分的不可变声明。 与其他将视图、控制器、布局和其他属性分离的框架不同，Flutter具有一致的统一对象模型：widget。
 
@@ -75,7 +77,7 @@ Widget根据布局形成一个层次结构。每个widget嵌入其中，并继�
 
 您可以通过告诉框架使用另一个widget替换层次结构中的widget来响应事件，例如用户交互，替换后框架会比较新的和旧的widget，并高效地更新用户界面。
 
-######组合 > 集成
+###### 组合 > 集成
 
 Widget本身通常由许多更小的、单一用途widget组成，这些widget结合起来产生强大的效果。例如，[Container](https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/container.dart)是一个常用的widget， 由多个widget组成，这些widget负责布局、绘制、定位和调整大小。具体来说，Container由 [LimitedBox](https://docs.flutter.io/flutter/widgets/LimitedBox-class.html)、 [ConstrainedBox](https://docs.flutter.io/flutter/widgets/ConstrainedBox-class.html)、 [Align](https://docs.flutter.io/flutter/widgets/Align-class.html)、 [Padding](https://docs.flutter.io/flutter/widgets/Padding-class.html)、 [DecoratedBox](https://docs.flutter.io/flutter/widgets/DecoratedBox-class.html)、 和[Transform](https://docs.flutter.io/flutter/widgets/Transform-class.html)组成。 您可以用各种方式组合这些以及其他简单的widget，而不是继承容器。
 
@@ -145,7 +147,7 @@ Widget本身通常由许多更小的、单一用途widget组成，这些widget�
 
 您还可以通过与其他widget组合来控制widget的布局。例如，要将widget居中，可以将其封装在Center widget中。有填充、对齐、行、列和网格的widget。 这些布局widget没有自己的可视化表示。相反，他们唯一的目的是控制另一个widget布局的某些方面。要理解widget以某种方式呈现的原因，检查相邻widget通常很有帮助。
 
-######分层的框架
+###### 分层的框架
 
 Flutter框架是一个分层的结构，每个层都建立在前一层之上。
 
@@ -235,7 +237,7 @@ Flutter框架是一个分层的结构，每个层都建立在前一层之上。
 
 没有什么是隐藏的。您可以从高层次，统一的widget概念中获得开发效率优势，而不会牺牲您希望深入到下层的能力。
 
-#####构建widget
+##### 构建widget
 
 您可以通过实现widget的build返回widget树（或层次结构）来定义widget的独特特征 。 这棵树更具体地表示了用户界面的widget层次。例如，工具栏widget的build函数可能返回一个包含一些文本和各种按钮的水平布局。 然后，框架递归地构建widget，直到该所有widget构建完成，然后framework将他们一起添加到树中。
 
@@ -243,7 +245,7 @@ widget的构建函数一般没有副作用。每当它被要求构建时，widge
 
 这种自动比较非常有效，可以实现高性能的交互式应用程序。而构建函数的设计则着重于声明widget是由什么构成的，而不是将用户界面从一个状态更新到另一个状态的(这很复杂性)，从而简化了代码。
 
-#####处理用户交互
+##### 处理用户交互
 
 如果widget需要根据用户交互或其他因素进行更改，则该widget是有状态的。例如，如果一个widget的计数器在用户点击一个按钮时递增，那么该计数器的值就是该widget的状态。 当该值发生变化时，需要重新构建widget以更新UI。
 
@@ -289,7 +291,7 @@ widget的构建函数一般没有副作用。每当它被要求构建时，widge
 
 有了独立的状态和widget对象，其他widget可以以同样的方式处理无状态和有状态的widget，而不必担心丢失状态。 父widget可以自由地创造子widget的新实例且不会失去子widget的状态，而不是通过持有子widget来维持其状态。 框架在适当的时候完成查找和重用现有状态对象的所有工作。
 
-#####试试!
+##### 试试!
 
 现在您已经熟悉了Flutter框架的基本结构和原理，以及如何构建应用程序并和其交互，您就可以开始开发和迭代了。
 
